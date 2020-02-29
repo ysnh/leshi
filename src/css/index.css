@@ -1,0 +1,288 @@
+.icon{
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    position: relative;
+}
+i{
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+/*  顶部*/
+#topbar{
+    background-color: #333;
+    height: 32px;
+    width: 100%;
+}
+.area-center{
+    width: 1200px;
+    height: 32px;
+    margin: 0 auto;
+    
+}
+.areac-contain{
+    width: 1200px;
+    height: 32px;
+    /* background-color: red; */
+}
+.areac-contain .area-left{
+    float: left;
+}
+.area-left {
+    width: 142px;
+    height: 32px;
+    /* background-color: yellow; */
+}
+.area-left ul{
+    width: 142px;
+    height: 32px;
+}
+
+.area-left ul li{
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+    margin: 0 18px 0 0;
+}
+.area-left ul li a{
+    color: #fff;
+}
+.area-left ul li a:hover{
+    color: #2884c7;
+    text-decoration: none;
+}
+.list-logout{
+    display: block;
+}
+.list-logoin{
+    display: none;
+}
+.list-logoin .nickName{
+    padding: 0 10px 0 0;
+}
+.gap{
+    color: #fff;
+}
+.areac-contain .area-right{
+    float: right;
+    width: 302px;
+    height: 32px;
+    
+}
+.area-right ul{
+    height: 32px;
+    font-size: 12px;
+}
+.area-right  li{
+    list-style: none;
+    float: left;
+    line-height: 31px;
+    text-align: center;
+    padding: 0 4px 0 10px;
+}
+.area-right ul li a{
+    color: #fff;
+}
+.area-right ul li a:hover{
+    text-decoration: none;
+    color: #2884c7;
+}
+.area-right .r-label{
+    height: 31px;
+    position: relative;
+   border: 1px solid #333;
+    border-bottom: 0;
+    color: #fff;
+}
+.area-right .r-label:hover{
+    height: 31px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+}
+.area-right .r-label:hover a{
+    color: #333;
+}
+.area-right .r-label a:hover{
+    color: #2884c7;
+}
+.area-right .r-label .zitb{
+    width: 16px;
+    height: 16px;
+    font-size: 42px;
+}
+.area-right .r-label .yc-menu{
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    z-index: 2000;
+    background-color: #fff;
+    display: none;
+}
+.area-right .r-label:hover .yc-menu{
+    display: block;
+    border: 1px solid #ddd;
+    border-top: 0;
+}
+.yc-menu .yc-menu-link a{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #333;
+}
+.r-label .yc-menu.ewm{
+    width: 286px;
+    padding: 10px 10px 0;
+   
+}
+ .yc-menu.ewm .code-ewm{
+    float: left;
+    width: 132px;
+    padding: 10px 10px 0;
+    color: #333;
+}
+
+
+/*头部*/
+.header{
+    width: 100%;
+    background-color: #fff;
+}
+.header-conte{
+    width: 1200px;
+    height: 120px;
+    background-color: pink;
+    margin: 0 auto;
+}
+.header-conte .app-xz{
+    float: right;
+    width: 88px;
+    height: 102px;
+    border: 1px solid #ddd;
+    margin: 8px 0 0;
+    position: relative;
+    
+}
+.header-conte .app-xz .gb{
+    position: absolute;
+    top: -1px;
+    right: -15px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #494949;
+    font-size: 12px;
+    background-color: #e9e9e9;
+    cursor: pointer;
+}
+.header-conte .app-xz .xz-name{
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+}
+.header-conte .app-xz .xz-tp img{
+    display: block;
+    margin: 0 auto;
+    width: 75px;
+}
+.header-conte .shopp.cart{
+    margin-right: 28px;
+}
+.header-conte .shopp{
+    float: right;
+    margin: 32px 0 0;
+    background-color: #fff;
+    width: 122px;
+    height: 40px;
+}
+.header-conte .shopp.cart a{
+    width: 120px;
+}
+.header-conte .shopp a{
+    display: block;
+    width: 164px;
+    height: 38px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+.header-conte .shopp a:hover{
+    border: 1px solid #2884c7;
+    background-color: #2884c7;
+    color:#fff;
+}
+.header-conte .shopp a .gwc{
+    font-size: 24px;
+    width: 24px;
+    height: 38px;
+}
+.header-conte .header-logo{
+    float: left;
+    width: 330px;
+    height: 120px;
+    position: relative;
+}
+.header-conte .header-logo img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    
+}
+.header-conte .seach{
+    float: left;
+    margin: 32px 0 0 0;
+    position: relative;
+    width: auto;
+    border: 0;
+}
+.seach .s-seach-text{
+    float: left;
+    width: 450px;
+    border: 2px solid #2884c7;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 0 0 12px;
+    margin: 0;
+    outline: 0 ;
+    font-size: 14px;
+}
+.seach .s-seach-btn{
+    float: left;
+    width: 134px;
+    height: 36px;
+    background-color: #2884c7;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.seach .s-seach-btn .ss{
+    margin: 0 7px;
+}
+
+
+/*banner区域*/
