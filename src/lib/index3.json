@@ -1,0 +1,98 @@
+[
+    {
+    
+        "name": "客厅优选",
+        "id":"(18~30M²)",
+        "list": [
+            {
+                "img": "../images/indeximg/55.jpg",
+                "size": "Y32"
+            },
+            {
+                "img": "../images/indeximg/55.jpg",
+                "size": "Y32H"
+            },
+            {
+                "img": "../images/indeximg/55.jpg",
+                "size": "x40c"
+            },
+            {
+                "img": "../images/indeximg/55.jpg",
+                "size": "Y32sa"
+            }
+        ]
+    
+    },
+    {
+    
+        "name": "卧室优选",
+        "id":"(18~30M²)",
+        "list": [
+            {
+                "img": "../images/indeximg/55.jpg",
+                "size": "Y32"
+            },
+            {
+                "img": "../images/indeximg/65.jpg",
+                "size": "Y32H"
+            },
+            {
+                "img": "../images/indeximg/64.jpg",
+                "size": "x40c"
+            },
+            {
+                "img": "../images/indeximg/63.jpg",
+                "size": "Y32sa"
+            }
+        ]
+    
+    },
+    {
+    
+        "name": "书房优选",
+        "id":"(18~30M²)",
+        "list": [
+            {
+                "img": "../images/indeximg/62.jpg",
+                "size": "Y32"
+            },
+            {
+                "img": "../images/indeximg/61.jpg",
+                "size": "Y32H"
+            },
+            {
+                "img": "../images/indeximg/60.jpg",
+                "size": "x40c"
+            },
+            {
+                "img": "../images/indeximg/59.jpg",
+                "size": "Y32sa"
+            }
+        ]
+    
+    },
+    {
+    
+        "name": "私人影院优选",
+        "id":"(18~30M²)",
+        "list": [
+            {
+                "img": "../images/indeximg/55.jpg",
+                "size": "Y32"
+            },
+            {
+                "img": "../images/indeximg/56.jpg",
+                "size": "Y32H"
+            },
+            {
+                "img": "../images/indeximg/57.jpg",
+                "size": "x40c"
+            },
+            {
+                "img": "../images/indeximg/58.jpg",
+                "size": "Y32sa"
+            }
+        ]
+    
+    }
+]
