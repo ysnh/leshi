@@ -1,1 +1,1 @@
-"use strict";
+"use strict";window.onload=function(){$.ajax({url:"/login",type:"post",data:{username:"admin",password:"123456"},success:function(o){console.log(o)}})};

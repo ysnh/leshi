@@ -1,85 +1,6 @@
 
 window.onload=function(){
-    pageHtml()
-    function pageHtml(){
-         $.ajax({
-        url:'../lib/list.json',
-        dataType:"json",
-        success:function(res){
-            // let str='';
-        //    var sc=res.result.hits;
-        console.log(res)
-            let str='';
-            res.forEach((ele) => {
-            
-              str+=`
-              <li>
-              <div class="pro_img t_c">
-                  <a href="">
-                      <img src="${ele.img}" alt="">
-                  </a>
-              </div>
-
-              <div class="proThumb clearfix">
-                  <div class="proThumb_wrap">
-                      <div class="p clearfix js_proImg">
-
-                      </div>
-                  </div>
-              </div>
-
-              <div class="proName">
-                  <div class="pro_name dark font14 t_c">
-                      <a href="">
-                      ${ele.name}
-                          
-                          <div class="TitTip">
-                              <em>超5 x50s底座版</em>
-                          </div>
-                      </a>
-                  </div>
-              </div>
-
-              <div class="pro_price">
-                  <span class="red font14 t_l js_price">
-                      <font>￥</font>
-                      ${ele.price}
-                  </span>
-                  <span class="through js_oldPrice">
-
-                  </span>
-              </div>
-
-              <div class="pro_evaluate">
-                  <em class="star">
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                      <i></i>
-                  </em>
-                  <a href="">
-                      <span>暂无评价</span>
-                  </a>
-              </div>
-
-              <div class="pro_btns">
-                  <a href="" class="send_action">
-                      立即购买
-                  </a>
-              </div> 
-          </li>
-                             
-              `
-            });
-       
-             $('.result_list').html(str);
-       
-       
-        }
-
-    });
- }
+  
    
     
      //下载显示隐藏
@@ -146,15 +67,16 @@ window.onload=function(){
          $('#kf-div').hide();
  
      });
-
+    
      //列表移入显示
-     $('#min-menu').hover(function(){
-         $('.lbcd-contiue').css('display','block');
-     },
-        
-     
-     
-     )
+     $('#min-menu').mouseenter(function(){
+         $('.lbcd-contiue').show()
+     })
+     $('#min-menu').mouseleave(function(){
+        $('.lbcd-contiue').hide()
+    })
+
+
    
 
      //数据请求
@@ -377,11 +299,147 @@ window.onload=function(){
             }
         })
     };
-
-
+  
     
 
 
+   var flag=true;
+   var list2=[];
+
+    pageHtml()
+    function pageHtml(){
+        $.ajax({
+            url:'../lib/list.json',
+            dataType:'json',
+            success:function(res){
+                    console.log(res) 
+                //2.渲染分页器
+                $('.pagi').pagination({
+                    pageCount: Math.ceil(res.length/30),//总页数
+                    jump: false,
+                    coping: false,
+                   current:1,
+                   prevContent: '上页',
+                   nextContent: '下页',
+                    callback: function (api) {
+                       let curr=api.getCurrent()
+                        var list=res.slice((curr-1)*30,curr*30)
+
+                        bindHtml(list)//每次使用分页器切换的时候渲染一次
+                    }
+                })
+                bindHtml(res.slice(0,30))
+
+                //给全局变量赋值
+                list2=res
+            }
+        })
+    }
+
+        function bindHtml(list){
+            // console.log(list)
+            let str=''
+                list.forEach(item=>{
+                    str+=`
+                    <li>
+                                  <div class="pro_img t_c">
+                                       <a href="">
+                                          <img src="${item.img}" alt="">
+                                       </a>
+                                   </div>
+                    
+                                  <div class="proThumb clearfix">
+                                       <div class="proThumb_wrap">
+                                          <div class="p clearfix js_proImg">
+                    
+                                           </div>
+                                       </div>
+                                   </div>
+                    
+                                   <div class="proName">
+                                      <div class="pro_name dark font14 t_c">
+                                          <a href="">
+                                           ${item.name}
+                                              
+                                               <div class="TitTip">
+                                                   <em>超5 x50s底座版</em>
+                                              </div>
+                                           </a>
+                                       </div>
+                                   </div>
+                    
+                                   <div class="pro_price">
+                                <span class="red font14 t_l js_price">
+                                           <font>￥</font>
+                                           ${item.price}
+                                       </span>
+                                      <span class="through js_oldPrice">
+                    
+                                       </span>
+                                   </div>
+                    
+                                   <div class="pro_evaluate">
+                                       <em class="star">
+                                           <i></i>
+                                           <i></i>
+                                           <i></i>
+                                           <i></i>
+                                           <i></i>
+                                       </em>
+                                       <a href="">
+                                           <span>暂无评价</span>
+                                       </a>
+                                   </div>
+                    
+                                   <div class="pro_btns">
+                                      <a href="" class="send_action">
+                                           立即购买
+                                      </a>
+                                   </div> 
+                               </li>
+                    
+                    
+                    `
+                })
+
+                $('.result_list').html(str);
+
+        }
+        
+        //排序
+        $(".ss_tab_left a span").on('click',function(){
+            $(this).addClass('red').parent().siblings().children().removeClass('red')
+                flag=!flag
+                //不管什么都把数组重组
+                list2.sort(function(a,b){
+                    if(flag===true){
+                        return a.price-b.price
+                    }else{
+                        return b.price-a.price
+                    }
+                })
+         
+                
+                $('.pagi').pagination({
+                    pageCount: Math.ceil(list2.length/30),//总页数
+                    jump: false,
+                    coping: false,
+                   current:1,
+                   prevContent: '上页',
+                   nextContent: '下页',
+                    callback: function (api) {
+                       let curr=api.getCurrent()
+                        var list=list2.slice((curr-1)*30,curr*30)
+
+                        bindHtml(list)//每次使用分页器切换的时候渲染一次
+                    }
+                })
+                bindHtml(list2.slice(0,30))                             
+            })
+    
+        
+       
+       
 }
 
 

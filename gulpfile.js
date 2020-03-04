@@ -130,8 +130,8 @@ const serverHandel=()=>{
         proxies:[
             //每一个代理配置就是一个对象
             {
-                source:'/ljw',//源
-                target:'http://127.0.0.1/start.php'//目标
+                source:'/login',//源
+                target:'http://localhost:80/leshi.php'//目标
             }
         ]
 

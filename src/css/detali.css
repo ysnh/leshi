@@ -286,9 +286,9 @@ ul{
 }
 .lbcd-contiue{
     position: absolute;
-    left: 0;
+    left: 160px;
     display: none;
-    top: 162px;
+    top: 194px;
     z-index: 2000;
 }
 .lbcd-contiue .lbcd-wrap{
@@ -666,14 +666,16 @@ ul{
 .red{
     color: #d80c18;
 }
-.ss_tab_right{
+.pagi{
     height: 50px;
     width: 400px;
     float: right;
     line-height: 50px;
-    text-align: right;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
 }
-.ss_tab_right>span{
+/* .ss_tab_right>span{
     padding-right: 10px;
 }
 .ss_tab_right .totalnum{
@@ -698,7 +700,7 @@ ul{
     border: 1px solid #fff;
     background-color: #fff;
     margin-right: 15px;
-}
+} */
 .pt6{
     padding-top: 6px;
 }
@@ -1055,7 +1057,7 @@ ul{
     padding-top: 6px;
     position: absolute;
     background-color: #fff;
-    height: 30px;
+    height: 20px;
     line-height: 20px;
     padding:5px 10px;
     color: #000;
@@ -1181,7 +1183,7 @@ ul{
     padding-bottom: 6px;
     position: absolute;
     background-color: #fff;
-    height: 30px;
+    height: 20px;
     line-height: 20px;
     padding:5px 10px;
     color: #000000;
