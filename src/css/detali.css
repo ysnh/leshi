@@ -992,6 +992,9 @@ ul{
 .le_footer2_copyright a:hover{
     color: #f05353;
 }
+
+
+
 .pc-float{
     z-index: 900000;
     position: fixed;
