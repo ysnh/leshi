@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/logon.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1663593_st8h8caekks.css">
+
+    
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/logon.js"></script>
+    <script src="../lib/layer/layer.js"></script>
 </head>
 
 <body>
     
-    <script src="../lib/jquery/dist/jquery.min.js"></script>
-    <script src="../js/login.js"></script>
     <div class="le-top">
         <div class="le-top-box">
             <a href="" id="logo_url">
@@ -57,12 +60,12 @@
                             <ul class="regi-ul regi-login-ul">
                                 <li class="regi-form-input">
                                     <i class="iconfont  icon-ren"></i>
-                                    <input type="text" name="username" class="login-input login-input-left" placeholder="手机号" autocomplete="off">
+                                    <input type="text"  class="login-input login-input-left username" placeholder="手机号" autocomplete="off">
                                     
                                 </li>
                                 <li class="regi-form-input">
                                     <i class="iconfont  icon-mima"></i>
-                                    <input type="paddword" name="password" class="login-input login-input-left" placeholder="密码" autocomplete="off">
+                                    <input type="password"  class="login-input login-input-left password" placeholder="密码" autocomplete="off">
                                 
                                 </li>
                             </ul>
@@ -80,7 +83,7 @@
                             </span>
                         </li>
                         <li>
-                            <a href=""id="login-btn" class="regi-btn">注&nbsp;&nbsp;&nbsp;&nbsp;册</a>
+                            <a href="javascript:void(0)"id="login-btn" class="regi-btn">注&nbsp;&nbsp;&nbsp;&nbsp;册</a>
                         </li>
                     </ul>
                 </div>

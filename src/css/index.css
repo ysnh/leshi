@@ -80,8 +80,9 @@ ul{
     /* background-color: yellow; */
 }
 .area-left ul{
-    width: 142px;
+    width: 220px;
     height: 32px;
+    color: #fff;
 }
 
 .area-left ul li{
@@ -588,6 +589,9 @@ ul{
 .user-news-container .user-news-wrap .user-box{
     text-align: center;
 }
+/* .user-news-container .user-news-wrap .user-box .logout-wrap{
+    display: none;
+} */
 .user-news-container .user-news-wrap .user-box .logout-wrap .user-headimg img{
     display: block;
     width: 60px;
@@ -595,6 +599,7 @@ ul{
     margin: 0 auto;
     border: 1px solid #e6e6e6;
     border-radius: 50%;
+    
 }
 .user-news-container .user-news-wrap .user-box .logout-wrap .user-title{
     padding: 5px 0 0;
@@ -654,6 +659,72 @@ ul{
     text-overflow: ellipsis;
     overflow: hidden;
 }
+.user-news-container .user-news-wrap .user-box .login-wrap{
+    width: 238px;
+    height: 145px;
+    display: none;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-headimg img{
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border: 1px solid #e6e6e6;
+    border-radius: 50%;
+    
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-title{
+    padding: 5px 0 0;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap  .user-desc{
+    padding: 2px 0 0;
+    color: #999;
+    text-align: center;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-desc .level-icon{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: -4px;
+    margin: 0 8px 0 0;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-desc .level-icon img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-desc a{
+    color: #2884c7;
+    text-decoration: underline;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-message{
+    width: 222px;
+    margin: 11px auto 0;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-message li{
+    width: 74px;
+    float: left;
+    text-align: center;
+    line-height: 1;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-message li .message-number{
+    font-size: 14px;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-message li .message-number a{
+    color: red;
+}
+.user-news-container .user-news-wrap .user-box .login-wrap .user-message li .message-name{
+    color: #999;
+    padding: 8px 0 0;
+}
+
+
+
+
+
+
+
+
 .guangg-center{
     width: 1200px;
     margin: 0 auto;

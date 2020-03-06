@@ -1,5 +1,38 @@
 
 window.onload = function () {
+
+     function getCookie(name) {
+                        var strCookie = document.cookie;
+                        var arrCookie = strCookie.split("; ");
+                        for (var i = 0; i < arrCookie.length; i++) {
+                            var arr = arrCookie[i].split("=");
+                            if (arr[0] == name)
+                                return arr[1];
+                        }
+                        return "";
+                    }
+        
+        var islogin = getCookie("username");
+            if(islogin!==''){
+                $(".list-logout").hide();
+                $(".list-logoin").show();
+                $(".nickName >a").text(islogin)
+            }else{
+                $(".list-logout").show();
+                $(".list-logoin").hide();
+            }
+
+function exitLogin() {
+            document.cookie = "username=";
+            document.cookie = "password=";
+            window.location.reload(true);
+        }
+ $(".logout").click(function(){
+        exitLogin()
+        $(".list-logoin").hide();
+ })
+
+
     //下载显示隐藏
     $('.app-xz > .gb').click(function () {
         $('.app-xz').hide();

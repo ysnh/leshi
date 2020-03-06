@@ -132,6 +132,9 @@ const serverHandel=()=>{
             {
                 source:'/login',//源
                 target:'http://localhost:80/leshi.php'//目标
+            },{
+                source:'/logon',//源
+                target:'http://localhost:80/login.php'//目标
             }
         ]
 

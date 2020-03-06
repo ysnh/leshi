@@ -87,8 +87,9 @@ ul{
     /* background-color: yellow; */
 }
 .area-left ul{
-    width: 143px;
+    width: 220px;
     height: 32px;
+    color: #fff;
 }
 
 .area-left ul li{

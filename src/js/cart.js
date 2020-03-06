@@ -1,19 +1,69 @@
 window.onload=function(){
-
-
-    const cartList=JSON.parse(localStorage.getItem('cartList'))
+  //登录
+   function getCookie(name) {
+                    var strCookie = document.cookie;
+                    var arrCookie = strCookie.split("; ");
+                    for (var i = 0; i < arrCookie.length; i++) {
+                        var arr = arrCookie[i].split("=");
+                        if (arr[0] == name)
+                            return arr[1];
+                    }
+                    return "";
+                }
     
+    var islogin = getCookie("username");
+            if(islogin!==''){
+                $(".list-logout").hide();
+                $(".list-logoin").show();
+            $(".nickName >a").text(islogin)
+            }else{
+                $(".list-logout").show();
+                $(".list-logoin").hide();
+            }
+function exitLogin() {
+          document.cookie = "username=";
+          document.cookie = "password=";
+          window.location.reload(true);
+      }
+  //点击退出
+$(".logout").click(function(){
+      exitLogin()
+      $(".list-logoin").hide();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    var cartList=JSON.parse(localStorage.getItem('cartList'))
+    console.log( )
     if(!cartList){
-         $('.gw-logo').show()
-        alert('您的购物车为空, 快去选购把')
+       $(".gw-logo").show()
+      // $(".gw").hide()
+       
     }else{
 
-         $('.gw-logo').hide()
+        
         //渲染页面
 
         bindHtml()
         // //添加各种事件
-        bindEvent()
+         bindEvent()
     }
     //console.log(cartList)
     function bindHtml() {
@@ -29,7 +79,7 @@ window.onload=function(){
         })
         var str=''
         str+=`
-        <div class="cart">
+        
         <div class="top">
           <input class="selectAll" type="checkbox" ${ selectAll ? 'checked' : '' }>   全选
           <ul>
@@ -45,6 +95,7 @@ window.onload=function(){
 
       cartList.forEach(item => {
         // 每一条数据的渲染, 根据每一条信息来渲染页面
+        // console.log(item)
         str += `
           <li>
             <div class="select">
@@ -54,7 +105,7 @@ window.onload=function(){
               <img src="${ item.img}" alt="">
               <p>${ item.name }</p>
             </div>
-            <p class="price">${ item.price }</p>
+            <p class="price">￥：${ item.price }</p>
             <div class="number">
               <button class="sub" data-id=${ item.id }>-</button>
               <input type="text" value="${ item.number }">
@@ -93,18 +144,19 @@ window.onload=function(){
           <button class="pay" ${ selectArr.length ? '' : 'disabled'}>去支付</button>
           <button class="clear">清空购物车</button>
         </div>
-        </div>
-
+        
+      
         `
         
   
         // 整体添加到页面的盒子里面
-       $(".gw").html(str)
+       $(".cart ").html(str)
       }
  
 
 
       function bindEvent() {
+       
         // 4-1. 全选按钮的事件
         $('.cart').on('change', '.selectAll', function () {
           // 自己的状态就是每一条数据的状态
@@ -187,23 +239,38 @@ window.onload=function(){
         })
   
         // 4-5. 点击删除的事件
-        $(".gw>.cart").on('click', '.del', function () {
+        $(".gw .cart").on('click', '.del', function () {
             const id=$(this).data("id");
-            // $(this).parents(".cart").remove();
-            // bindHtml() 
-            $(this).parent().parent().parent().remove()
-            let listArr=cartList.filter(item=>item.id!=id);
             
-            // localStorage.setItem('cartList',JSON.stringify(listArr))
+            $(this).parent().remove();
+            // bindHtml()
+            cartList=cartList.filter(item=>item.id !=id)
+            // $(this).parent().remove()
+            // cartList.remove(item=>item.id=id);
            
             
-            localStorage.setItem('cartList', JSON.stringify(listArr))
-            bindHtml()
+           
+              
+            
+            
+              localStorage.setItem('cartList', JSON.stringify(cartList))
+              bindHtml()
+              if(cartList.length==0||[]){
+                $(".gw-logo").show()
+                $(".gw").hide()
+              }
+           
+            
+            
+            
         })
   
         // 4-6. 点击清除的事件
-        $(".gw>.cart").on('click', '.clear', function () {
-            console.log($(this))
+        $(".gw .cart").on('click', '.clear', function () {
+                $(".cart").parent().remove();
+                localStorage.setItem('cartList', JSON.stringify([]))
+                bindHtml()
+                $(".gw-logo").show()
         })
       }
 
