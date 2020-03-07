@@ -255,7 +255,7 @@ $(".logout").click(function(){
             
               localStorage.setItem('cartList', JSON.stringify(cartList))
               bindHtml()
-              if(cartList.length==0||[]){
+              if(cartList.length==0&[]){
                 $(".gw-logo").show()
                 $(".gw").hide()
               }

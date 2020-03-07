@@ -398,6 +398,7 @@ function exitLogin() {
         if (islogin !== '') {
             // $(".list-logout").hide();
             // $(".list-logoin").show();
+            alert("添加成功")
              location.href = './cart.html'
             // $(".nickName >a").text(islogin)
         } else {
@@ -461,7 +462,7 @@ function exitLogin() {
             cartList.push(info)
         }
         //储存到locastorage里面
-        alert("添加成功")
+        
         localStorage.setItem('cartList', JSON.stringify(cartList))
 
         console.log(cartList)
